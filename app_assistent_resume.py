@@ -83,6 +83,7 @@ def ask_gigachat(question, context):
             "content": f"Контекст (моё резюме):\n{context}\n\nВопрос рекрутера: {question}\n\nОтветь от моего имени, как будто я сама отвечаю на собеседовании."
         }
                 ]
+        }
     response = requests.post(url, headers=headers, json=data, verify=False)
     return response.json()["choices"][0]["message"]["content"]
 
